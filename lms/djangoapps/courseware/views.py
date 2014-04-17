@@ -338,16 +338,20 @@ def mobi_course_action(request, course_id, action):
                 # course_updates = get_course_info_section(request, course, action)
                 loc = Location(course.location.tag, course.location.org, course.location.course, 'course_info', action)
                 field_data_cache = FieldDataCache([], course.id, request.user)
-                course_module = get_module(
-                    user,
-                    request,
-                    loc,
-                    field_data_cache,
-                    course.id,
-                    wrap_xmodule_display=False,
-                    static_asset_path=course.static_asset_path
-                )
-                return JsonResponse({'updates': course_module.items})
+                # course_module = get_module(
+                #     user,
+                #     request,
+                #     loc,
+                #     field_data_cache,
+                #     course.id,
+                #     wrap_xmodule_display=False,
+                #     static_asset_path=course.static_asset_path
+                # )
+                print "======================= " * 4
+                course_module_des = get_module_for_descriptor(user, request, course, field_data_cache, course.id)
+                print "----------------------- " * 4
+                print course_module_des["get_module"]
+                return JsonResponse({'updates': course_module_des.items})
             elif action == "handouts" and registered:
                 course_handouts = get_course_info_section(request, course, action)
                 return JsonResponse({"handouts": course_handouts})
