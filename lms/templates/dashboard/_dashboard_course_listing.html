@@ -107,7 +107,7 @@
 
       % if show_courseware_link:
         % if course.has_ended():
-          <a href="${course_target}" class="enter-course archived">${_('View Archived Course')}</a>
+          <a href="${course_target}" class="enter-course archived" style=" margin-top: 30px;">${_('View Archived Course')}</a>
         % else:
           <a href="${course_target}" class="enter-course">${_('View Course')}</a>
         % endif
@@ -138,7 +138,7 @@
 
     <script type="text/javascript" src="/static/js/rate.js"></script>
     <div _rate="${grade_summary_percent}" class="ratebar">
-      <div class="ratebar-box">
+      <div class="ratebar-box" style=" margin-top: 15px;">
         <div class="ratebar-box-text">课程进度</div>
         <div class="ratebar-box-present"></div>
         <div class="ratebar-box-100">100%</div>
