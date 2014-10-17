@@ -166,7 +166,7 @@ msgstr "课件"
 #: common/lib/xmodule/xmodule/course_module.py
 #: lms/djangoapps/instructor/views/instructor_dashboard.py
 msgid "Course Info"
-msgstr "更新"
+msgstr "课程信息"
 
 #. Translators: "Discussion" is the title of the course forum page
 #. Translators: "Discussion" is the title of the course forum page

@@ -364,6 +364,12 @@ def get_course_tabs(user, course, active_page, request):
     if has_access(user, course, 'staff'):
         tabs.append(_instructor(course, active_page))
 
+    # add Switching output position Courseware and info
+    if tabs:
+      t = tabs[0]
+      tabs[0] = tabs[1]
+      tabs[1] = t
+
     return tabs
 
 
